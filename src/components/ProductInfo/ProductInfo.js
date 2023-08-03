@@ -172,41 +172,7 @@ const ProductInfo = () => {
 
       </div>
       <div >
-        {/* {!uploaded ?
-          <div className='upload-btn-main'>
-            
-            <div className='AddBoth'
-              onClick={ViewCart}
-            >
-              <div className='cbtn'>
-
-              Continue Without Prescription
-
-            </div>
-            </div>
-            <div className='upload-prec'
-            >
-              <div className="App center-content">
-                <div className="file-input" style={{ height: "100%", width: "100%" }}>
-                  <input
-                    type="file"
-                    onChange={handleFileChange}
-                    ref={fileInputRef}
-                    style={{ display: 'none' }}
-                  />
-                  <button className="upload-button" onClick={handleButtonClick}>
-                    UPLOAD PRESCRIPTION
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> :
-          <div
-            onClick={addToCart}
-            className='upload-prec' style={{ minHeight: '26px', left: 0, background: "#ef6c00", color: "#fff", borderTopLeftRadius: "10px" }}>
-            ADD TO CART
-          </div>} */}
-
+       
         <div className='sticky-atc'>
           {uploaded ?
               <div>
