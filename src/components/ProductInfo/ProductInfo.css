@@ -1,0 +1,258 @@
+.product_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+.main_div{
+    margin: 10px;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.product_size{
+    font-size: 15px;
+    font-weight: bold;
+}
+.product_price{
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #ea1a0b;
+}
+.product_size_box {
+    padding: 4px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border: 1px solid black;
+    width: min-content;
+    margin-right: 6px;
+    margin-bottom: 6px; /* Add margin to create spacing between boxes */
+    border-radius: 4px;
+  }
+  
+  .rowcss {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+  }
+.row1{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.row{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.rowEnd{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Icon_text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.icon-wraper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.rowcssPI{
+    margin-top: 30px;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 30px;
+}
+.product_mrp_price{
+    color: #8e8c8c;
+    font-size: 18px;
+    text-decoration: line-through;
+}
+.upload-prec{
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right:20px;
+    background-color: #fff;
+    width: fit-content;
+    font-weight: bold;
+    color: #ef6c00;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.upload-btn{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    opacity: 0.01;
+}
+.product-icon-wraper{
+    margin-top: 20px;
+    height: 100px;
+    width: 80%;
+}
+.upload-btn-main{
+    position: relative
+}
+@media screen and (max-width: 800px) {
+    .product_title{
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+    .product_size{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .product_price{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .product_mrp_price{
+        color: #8e8c8c;
+        font-size: 16px;
+        text-decoration: line-through;
+    }
+    .upload-btn{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        height: 150px;
+        top: 92%;
+        z-index: 100;
+        max-height: 26px;
+        min-height: 26px;
+    }
+    .upload-prec{
+        display: block;
+        border: solid 2px #ef6c00;
+        width: auto;
+        text-align: center;
+        font-weight: bold;
+        color: #ef6c00;
+        cursor: pointer;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 14px;
+        max-height: 26px;
+    }
+    .sticky-atc{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: auto;
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    .AddBoth{
+        background-color: #EF6C00;
+        font-size: 14px;
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        max-height: 40px;
+        height: 20px;
+        border-radius: 4px;
+    }
+    .AddToCart{
+        background-color: #EF6C00;
+        font-size: 14px;
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        max-height: 40px;
+        height: 20px;
+        border-radius: 4px;
+    }
+    .upload-btn-res{
+        background-color: #fff;
+        border: solid 2px #ef6c00;
+        font-size: 14px;
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        max-height: 40px;
+        border-radius: 4px;
+        margin-top: 10px;
+        height: 20px;
+    }
+    .cbtn{
+        background-color: #ef6c00;
+    }
+    .product-icon-wraper{
+        height: 80px;
+        width: 100%;
+        margin-top: 0;
+    }
+    .rowcssPI{
+        margin-top: 30px;
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 0px;
+    }
+    .upload-btn-main{
+        position: absolute
+    }
+    .main_div{
+        margin-left: 10px;
+    }
+}
+
+
+
+
+.file-input {
+    position: relative; /* To position the file input element correctly */
+  }
+  
+  .upload-button {
+    font-size: 14px; /* Customize font size as desired */
+    border: none;
+    background-color: #fff;
+    color: #EF6C00;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+      height: 100%;
+  }
+  
+  /* If you want the button to be centered horizontally */
+  .upload-button {
+    margin: 0 auto;
+  }
+  

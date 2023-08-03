@@ -1,0 +1,25 @@
+.quantity-picker {
+    display: flex;
+    align-items: center;
+    border: 1px solid #333;
+    width: min-content;
+    margin-left: 10px;
+  }
+  
+  .quantity-picker__button {
+    width: 30px;
+    height: 20px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .quantity-picker__value {
+    margin: 0 6px;
+    font-size: 16px;
+    color: black;
+  }
+  
