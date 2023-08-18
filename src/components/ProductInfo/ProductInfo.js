@@ -17,6 +17,9 @@ const ProductInfo = () => {
   const [uploaded, setUploaded] = useState(false);
   const [noPres, setNoPres] = useState(false);
   const [uploadedLink, setUploadedLink] = useState("false");
+  const [bodyHtml, setbodyHtml] = useState("");
+  const [manufactureDetails, setmanufactureDetails] = useState("");
+  const [refundDetails, setrefundDetails] = useState("");
 
   const fileInputRef = useRef(null);
 
@@ -37,9 +40,17 @@ const ProductInfo = () => {
             "variantId": size?.id,
             "productId": size?.product_id,
             "price": size?.price ?? 0,
-            "mrpPrice": size?.compare_at_price ?? 0
+            "mrpPrice": size?.compare_at_price ?? 0,
+            "sku": size?.sku ?? ""
+
           };
         });
+        setbodyHtml(data?.response?.body_html)
+        setmanufactureDetails(data?.response?.manufacture_details)
+        setrefundDetails(data?.response?.retrun_refund_policy)
+        console.log("refund");
+        console.log(data?.response?.retrun_refund_policy?.title);
+        console.log(data?.response?.retrun_refund_policy?.data);
         setTitle(data?.response?.title ?? "")
         setSizes(sizesData);
         setSelectedSize(sizesData[0]);
@@ -124,6 +135,14 @@ const ProductInfo = () => {
     AppmakerWebSdk.openCart();
   }
 
+  const [showDescription, setShowDescription] = useState(false);
+  const [showManufactureDetails, setShowManufactureDetails] = useState(false);
+  const [showRefundPolicy, setShowRefundPolicy] = useState(false);
+
+  const toggleDescription = () => {
+    setShowDescription(prevState => !prevState);
+  };
+
   return (
     <div className="main_div">
       <div className="product_title">
@@ -164,14 +183,57 @@ const ProductInfo = () => {
       <img className='product-icon-wraper' src={"https://cdn.shopify.com/s/files/1/0565/8021/0861/files/Screenshot_2023-07-30_at_9.32.45_AM.png?v=1690689788"}
         style={{ height: "120px" }}
       />
-      <div className='row1' style={{ marginBottom: "150px", marginTop: 0 }} >
+      <div className='row1' style={{  marginTop: 0 }} >
         <img style={{ marginRight: "10px",height:"16px" }} src={"https://cdn.shopify.com/s/files/1/0565/8021/0861/files/truck.png?v=1675345372"} alt={"van"} />
         <div style={{ fontSize: "13px"}}>
           Free delivery on orders above ₹699
         </div>
 
       </div>
-      <div >
+      <div className="product-detail">
+      <button className="description-button" onClick={toggleDescription}>
+        {showDescription ? 'Description' : 'Description'}
+        <div>
+          {showDescription ? '-' : '+'}
+        </div>
+      </button>
+      {showDescription && (
+        <div className="description" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      )}
+    </div>     
+    <div className="product-detail">
+      <button className="description-button" onClick={()=>{
+            setShowManufactureDetails(prevState => !prevState);
+            console.log("selectedSize");
+            console.log(selectedSize);
+      }}>
+        { manufactureDetails?.title}
+        <div>
+          {showManufactureDetails ? '-' : '+'}
+        </div>
+      </button>
+      {showManufactureDetails && (
+        <div className="description" dangerouslySetInnerHTML={{ __html: `<strong>SKU : </strong><span class=\"metafield-multi_line_text_field\">${selectedSize.sku}</span><br>  ${manufactureDetails?.data}` }} />
+      )}
+    </div>   
+    <div className="product-detail" style={{    marginBottom: "150px",marginTop:"10px"}}>
+      <button className="description-button" onClick={()=>{
+            setShowRefundPolicy(prevState => !prevState);
+            console.log("selectedSize");
+            console.log(selectedSize);
+      }}>
+        { refundDetails?.title}
+        <div>
+          {showRefundPolicy ? '-' : '+'}
+        </div>
+      </button>
+      {showRefundPolicy && (
+        <div onClick={()=>{
+          window.location.href = 'https://supertails.com/pages/return-policy?isMobileApp=true'
+        }} className="description" dangerouslySetInnerHTML={{ __html: `${refundDetails?.data}` }} />
+      )}
+    </div>   
+     <div >
        
         <div className='sticky-atc'>
           {uploaded ?

@@ -4,6 +4,8 @@
     border: 1px solid #333;
     width: min-content;
     margin-left: 10px;
+    padding-bottom: 4px;
+    padding-top: 3px;
   }
   
   .quantity-picker__button {
